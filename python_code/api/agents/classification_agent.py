@@ -3,16 +3,16 @@ import os
 import json
 from copy import deepcopy
 from .utils import get_chatbot_response, double_check_json_output
-from openai import OpenAI
+import openai
 load_dotenv()
 
 
 class ClassificationAgent():
     def __init__(self):
-        self.client = OpenAI(
-            api_key="rpa_YJ2IBMXDYYMJUUPNCL5QFEPD2WQKYU76P34XR5211lrda6",
-            base_url="https://api.runpod.ai/v2/t5b0bjb31m2ipr/openai/v1",
-        )
+        openai.api_key = "rpa_YJ2IBMXDYYMJUUPNCL5QFEPD2WQKYU76P34XR5211lrda6"
+        openai.api_base = "https://api.runpod.ai/v2/t5b0bjb31m2ipr/openai/v1"  # Set custom base URL if necessary
+
+        self.client = openai  # Directly using the openai module
         self.model_name = os.getenv("MODEL_NAME")
         
     def get_response(self,messages):
