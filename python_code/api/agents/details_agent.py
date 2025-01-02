@@ -14,6 +14,8 @@ class DetailsAgent():
             base_url="https://api.runpod.ai/v2/t5b0bjb31m2ipr/openai/v1",
         )
         self.model_name = os.getenv("MODEL_NAME")
+        
+        
         self.embedding_client = OpenAI(
             api_key="rpa_YJ2IBMXDYYMJUUPNCL5QFEPD2WQKYU76P34XR5211lrda6",
             base_url = "https://api.runpod.ai/v2/tyv6vmjx17v5h6/openai/v1",
